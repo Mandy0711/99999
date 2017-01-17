@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+     <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       <!--Import jQuery before materialize.js-->
+	   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">音樂天地~~</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="https://mandy0711.github.io/111111/">好聽的歌</a></li>
+        <li><a href="https://mandy0711.github.io/333/">推薦的音樂</a></li>
+		
+         <li><a href="https://mandy0711.github.io/555/">台中音樂地圖</a></li>
+		 <li><a href="https://mandy0711.github.io/222/">首頁-聽音樂的好處</a></li>
+      </ul>
+    </div>
+  </nav>
+	</div>
+		
+		<style>		 
+		  html, body {
+			height: 100%;
+		  }
+		  #map {
+			height: 100%;
+		  }
+		</style>
+
+    <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+// This example displays a marker at the center of Australia.
+// When the user clicks the marker, an info window opens.
+function initMap() {
+  var uluru = {lat: 24.144824, lng: 120.684429};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: uluru
+  });
+ 
+  
+  
+  
+  var dodo = {lat: 24.226486, lng:  120.685679};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">5大唱片</h5>'+
+      '<div id="bodyContent">'+
+      '<p>一樓都是流行音樂，二樓則是黑膠唱片與近幾年的國片，西洋片~~</p>' +
+      '</div>'+
+      '</div>';
+  var infowindow2 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker2 = new google.maps.Marker({
+    position: dodo,
+    map: map,
+    title: '5大唱片'
+  });
+  marker2.addListener('click', function() {
+    infowindow2.open(map, marker2);
+  });
+  
+  
+  
+    var sawema = {lat: 24.150460, lng: 120.684617};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">元氣音樂舖</h5>'+
+      '<div id="bodyContent">'+
+      '<p>一間有許多不同類型的二手唱片行~" </p>' +
+      '</div>'+
+      '</div>';
+  var infowindow3 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker3 = new google.maps.Marker({
+    position: sawema,
+    map: map,
+    title: '元氣音樂舖'
+  });
+  marker3.addListener('click', function() {
+    infowindow3.open(map, marker3);
+  });
+  
+  
+    var gipai = {lat: 24.165515, lng: 120.640450};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">AMANKING阿曼王國</h5>'+
+      '<div id="bodyContent">'+
+      '<p>台中有名的音樂酒吧，經常開演唱會" </p>' +
+      '</div>'+
+      '</div>';
+  var infowindow4 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker4 = new google.maps.Marker({
+    position: gipai,
+    map: map,
+    title: 'AMANKING阿曼王國'
+  });
+  marker4.addListener('click', function() {
+    infowindow4.open(map, marker4);
+  });
+  
+  
+  
+    var banueisow = {lat: 24.147251, lng:120.667393};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">辛巴音樂餐廳</h5>'+
+      '<div id="bodyContent">'+
+      '<p>走親民幽默風格的音樂bar~~</p>' +
+      '</div>'+
+      '</div>';
+  var infowindow5 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker5 = new google.maps.Marker({
+    position: banueisow,
+    map: map,
+    title: '辛巴音樂餐廳'
+  });
+  marker5.addListener('click', function() {
+    infowindow5.open(map, marker5);
+  });
+  
+  
+  
+    var lailai = {lat: 24.123582, lng: 120.660214};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">超級星懷舊音樂餐廳</h5>'+
+      '<div id="bodyContent">'+
+      '<p>裡面的裝潢很復古、特別，到了晚上有時還會有音樂表演" </p>' +
+      '</div>'+
+      '</div>';
+  var infowindow6 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker6 = new google.maps.Marker({
+    position: lailai,
+    map: map,
+    title: '超級星懷舊音樂餐廳'
+  });
+  marker6.addListener('click', function() {
+    infowindow6.open(map, marker6);
+  });
+  
+  
+    var fonzenbin = {lat: 24.148973, lng: 120.686518};
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h5 id="firstHeading" class="firstHeading">Mirage Lounge Bar</h5>'+
+      '<div id="bodyContent">'+
+      '<p>台中的爵士音樂餐廳，有調酒跟多樣的料理" </p>' +
+      '</div>'+
+      '</div>';
+  var infowindow7 = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker7 = new google.maps.Marker({
+    position: fonzenbin,
+    map: map,
+    title: 'Mirage Lounge Bar'
+  });
+  marker7.addListener('click', function() {
+    infowindow7.open(map, marker7);
+  });
+  
+  
+  
+   
+  
+  
+  
+  
+  
+  
+}
+    </script>
+   
+        
+  </body>
+
+
+
+
+
+
+     
+	 
+  
+       
+	      
+	   
+	   
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    </body>
+  </html>
+        
